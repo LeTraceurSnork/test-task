@@ -1,0 +1,10 @@
+# IDEs
+.idea/
+
+# Vendors
+node_modules/
+vendor/
+
+# Cache & Logs
+*.cache
+*.log
