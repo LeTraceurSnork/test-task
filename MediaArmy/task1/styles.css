@@ -29,10 +29,18 @@ body {
 }
 
 .popover {
+    max-width: 90vw;
+    width: auto;
     padding: 0;
     border: none;
     border-radius: 4px;
     background: #FFF;
+}
+
+@media (min-width: 600px) {
+    .popover {
+        max-width: 552px;
+    }
 }
 
 .popover__inner {
@@ -41,9 +49,14 @@ body {
     'NAV_BAR'
     'HEADER'
     'BODY';
-    width: 552px;
     margin: auto;
     padding: 0;
+}
+
+@media (min-width: 600px) {
+    .popover__inner {
+        width: 552px;
+    }
 }
 
 .popover__nav-bar {
@@ -81,8 +94,22 @@ body {
 }
 
 .popover__body {
-    padding: 20px 110px 32px;
+    padding: 20px 28px 32px;
     background-color: #FFF;
+}
+
+@media (min-width: 568px) {
+    .popover__body {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+@media (min-width: 768px) {
+    .popover__body {
+        padding-left: 110px;
+        padding-right: 110px;
+    }
 }
 
 .nav-buttons {
@@ -114,7 +141,7 @@ body {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
     gap: 16px;
 }
 
@@ -125,13 +152,15 @@ body {
 }
 
 .card__icon {
-    height: 100px;
+    max-width: 100%;
     width: 100px;
+    aspect-ratio: 1 / 1;
     border-radius: 4px;
     background-color: #DAE0E4;
 }
 
 .card__button {
+    max-width: 100%;
     width: 41px;
     height: 15px;
     border: none;
