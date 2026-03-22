@@ -1,6 +1,6 @@
 {
-    "name": "mediaarmy/test-task",
-    "description": "Isolated PHP environment for MediaArmy test task",
+    "name": "mediaarmy/task2",
+    "description": "Isolated PHP environment for MediaArmy test task 2",
     "type": "project",
     "require": {
         "php": "^8.4"
