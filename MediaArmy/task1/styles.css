@@ -94,14 +94,17 @@ body {
 }
 
 .popover__body {
-    padding: 20px 28px 32px;
+    grid-area: BODY;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 20px 56px 32px;
     background-color: #FFF;
 }
 
 @media (min-width: 568px) {
     .popover__body {
-        padding-left: 64px;
-        padding-right: 64px;
+        padding-left: 80px;
+        padding-right: 80px;
     }
 }
 
