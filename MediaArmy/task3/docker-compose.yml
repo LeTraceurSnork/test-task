@@ -9,5 +9,6 @@ services:
     volumes:
       - ./assets/:/var/www/html/assets
       - ./src/:/var/www/html/src
-      - ./index.php/:/var/www/html/index.php
+      - ./calculate.php:/var/www/html/calculate.php
+      - ./index.php:/var/www/html/index.php
     working_dir: /var/www/html
