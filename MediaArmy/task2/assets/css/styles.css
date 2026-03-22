@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    vertical-align: top;
+    text-align: left;
+}
+
+th {
+    background: #f5f5f5;
+}
+
+img {
+    display: block;
+    max-width: 120px;
+    height: auto;
+}
+
+.image-shell {
+    position: relative;
+    display: inline-block;
+    min-width: 120px;
+    min-height: 60px;
+    vertical-align: top;
+}
+
+.image-shell picture,
+.image-shell img {
+    display: block;
+    max-width: 120px;
+    width: 100%;
+    height: auto;
+}
+
+.image-shell__loader {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 28px;
+    height: 28px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.image-shell__loader::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
+    border: 3px solid #e0e0e0;
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: image-shell-spin 0.85s linear infinite;
+}
+
+.image-shell.is-loaded .image-shell__loader {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+@keyframes image-shell-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.empty {
+    color: #777;
+    font-style: italic;
+}

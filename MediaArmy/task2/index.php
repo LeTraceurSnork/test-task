@@ -10,7 +10,7 @@ use MediaArmy\Service\EntityTreeFlattener;
 $entitiesTree = [
     new Entity(
         name: 'Сущность 1',
-        img_src: 'https://placehold.co/400x300/cccccc/969696.png?font=lato',
+        img_src: 'https://placeholders.xyz/300x200',
         description: 'Описание первой сущности'
     ),
     [
@@ -20,7 +20,7 @@ $entitiesTree = [
         ),
         new Entity(
             name: 'Сущность 3',
-            img_src: 'https://placehold.co/400x300/cccccc/969696.png?font=lato'
+            img_src: 'https://placeholders.xyz/300x200'
         ),
     ],
     [
@@ -37,7 +37,7 @@ $entitiesTree = [
     [
         new Entity(
             name: 'Сущность 6',
-            img_src: 'https://placehold.co/400x300/cccccc/969696.png?font=lato',
+            img_src: 'https://placeholders.xyz/300x200',
             description: 'Ещё один элемент на том же уровне'
         ),
         [
@@ -49,7 +49,7 @@ $entitiesTree = [
 ];
 
 $flattener = new EntityTreeFlattener();
-$entities = $flattener->flatten($entitiesTree);
+$entities  = $flattener->flatten($entitiesTree);
 ?>
 <!doctype html>
 <html lang="ru">
@@ -57,34 +57,7 @@ $entities = $flattener->flatten($entitiesTree);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тестовое задание — таблица сущностей</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 24px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            vertical-align: top;
-            text-align: left;
-        }
-        th {
-            background: #f5f5f5;
-        }
-        .empty {
-            color: #777;
-            font-style: italic;
-        }
-        img {
-            display: block;
-            max-width: 120px;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" id="app-css" href="assets/css/styles.css" type="text/css" media="all"/>
 </head>
 <body>
 <h1>Список сущностей</h1>
@@ -102,10 +75,16 @@ $entities = $flattener->flatten($entitiesTree);
             <td><?= htmlspecialchars($entity->getName(), ENT_QUOTES, 'UTF-8') ?></td>
             <td>
                 <?php if ($entity->getImage() !== null): ?>
-                    <img
-                        src="<?= htmlspecialchars($entity->getImage(), ENT_QUOTES, 'UTF-8') ?>"
-                        alt="<?= htmlspecialchars($entity->getName(), ENT_QUOTES, 'UTF-8') ?>"
-                    />
+                    <?php
+                    $imgUrl = htmlspecialchars($entity->getImage(), ENT_QUOTES, 'UTF-8');
+                    $altEsc = htmlspecialchars($entity->getName(), ENT_QUOTES, 'UTF-8');
+                    ?>
+                    <div class="image-shell">
+                        <picture>
+                            <source srcset="<?= $imgUrl ?>">
+                        </picture>
+                        <span class="image-shell__loader" aria-hidden="true"></span>
+                    </div>
                 <?php else: ?>
                     <span class="empty">Нет изображения</span>
                 <?php endif; ?>
@@ -121,5 +100,6 @@ $entities = $flattener->flatten($entitiesTree);
     <?php endforeach; ?>
     </tbody>
 </table>
+<script src="./assets/js/scripts.js"></script>
 </body>
 </html>
