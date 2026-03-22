@@ -1,0 +1,18 @@
+{
+    "name": "mediaarmy/task3",
+    "description": "Isolated PHP environment for MediaArmy test task 3",
+    "type": "project",
+    "require": {
+        "php": "^8.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "MediaArmy\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

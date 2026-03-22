@@ -15,7 +15,8 @@ final readonly class Entity
         private string  $name,
         private ?string $img_src = null,
         private ?string $description = null
-    ) {}
+    ) {
+    }
 
     /**
      * @return string
