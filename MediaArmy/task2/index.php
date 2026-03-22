@@ -10,7 +10,7 @@ use MediaArmy\Service\EntityTreeFlattener;
 $entitiesTree = [
     new Entity(
         name: 'Сущность 1',
-        img_src: 'https://placeholders.xyz/300x200',
+        img_src: 'https://moqimg.ru/300x200.png',
         description: 'Описание первой сущности'
     ),
     [
@@ -20,7 +20,7 @@ $entitiesTree = [
         ),
         new Entity(
             name: 'Сущность 3',
-            img_src: 'https://placeholders.xyz/300x200'
+            img_src: 'https://moqimg.ru/300x200.png'
         ),
     ],
     [
@@ -37,7 +37,7 @@ $entitiesTree = [
     [
         new Entity(
             name: 'Сущность 6',
-            img_src: 'https://placeholders.xyz/300x200',
+            img_src: 'https://moqimg.ru/300x200.png',
             description: 'Ещё один элемент на том же уровне'
         ),
         [
@@ -82,6 +82,12 @@ $entities  = $flattener->flatten($entitiesTree);
                     <div class="image-shell">
                         <picture>
                             <source srcset="<?= $imgUrl ?>">
+                            <img
+                                src="<?= $imgUrl ?>"
+                                alt="<?= $altEsc ?>"
+                                width="120"
+                                decoding="async"
+                            />
                         </picture>
                         <span class="image-shell__loader" aria-hidden="true"></span>
                     </div>
