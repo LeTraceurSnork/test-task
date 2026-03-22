@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Task 1</title>
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+<main class="page">
+    <div class="page__button">
+        <button class="button"
+                id="open-dialog"
+                type="button"
+        >
+            Button
+        </button>
+    </div>
+
+    <div class="popover"
+         id="info-popover"
+         popover="manual"
+         role="dialog"
+    >
+        <div class="popover__inner">
+            <nav class="popover__nav-bar">
+                <div class="nav-buttons">
+                    <button class="nav-button nav-button--danger"
+                            id="close-dialog"
+                    >Закрыть
+                    </button>
+                    <button class="nav-button nav-button--warning">На весь экран</button>
+                    <button class="nav-button nav-button--ok">Свернуть</button>
+                </div>
+            </nav>
+            <div class="popover__scroll-container">
+                <header class="popover__header">
+                    <h1 class="popover__title"></h1>
+                    <p class="popover__description"></p>
+                </header>
+                <section class="popover__body">
+                    <div class="cards">
+                        <div class="cards__card">
+                            <div class="card">
+                                <div class="card__icon"></div>
+                                <button class="card__button"></button>
+                            </div>
+                        </div>
+                        <div class="cards__card">
+                            <div class="card">
+                                <div class="card__icon"></div>
+                                <button class="card__button card__button--lg"></button>
+                            </div>
+                        </div>
+                        <div class="cards__card">
+                            <div class="card">
+                                <div class="card__icon"></div>
+                                <button class="card__button card__button--md"></button>
+                            </div>
+                        </div>
+                        <div class="cards__card">
+                            <div class="card">
+                                <div class="card__icon"></div>
+                                <button class="card__button card__button--sm"></button>
+                            </div>
+                        </div>
+                        <div class="cards__card">
+                            <div class="card">
+                                <div class="card__icon"></div>
+                                <button class="card__button card__button--md"></button>
+                            </div>
+                        </div>
+                        <div class="cards__card">
+                            <div class="card">
+                                <div class="card__icon"></div>
+                                <button class="card__button card__button--sm"></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+<script defer src="scripts.js"></script>
+</body>
+</html>
