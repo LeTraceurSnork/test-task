@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mediaarmy-app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./assets/:/var/www/html/assets
+      - ./src/:/var/www/html/src
+      - ./index.php/:/var/www/html/index.php
+    working_dir: /var/www/html

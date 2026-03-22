@@ -1,0 +1,26 @@
+{
+    "name": "letraceursnork/test-task",
+    "description": "Bunch of test tasks for various employers",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Letraceursnork\\TestTask\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "LeTraceurSnork",
+            "email": "le_traceur_snork@mail.ru"
+        }
+    ],
+    "require": {
+        "php": "^8.4"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.94"
+    },
+    "scripts": {
+        "php-cs-fixer-check": "@php ./vendor/bin/php-cs-fixer fix --dry-run --config=.php-cs-fixer.dist.php",
+        "php-cs-fixer-fix": "@php ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php"
+    }
+}
